@@ -1,10 +1,7 @@
-var buildPath = require('path').join(__dirname, 'public');
 module.exports = {
   entry: "./app/App.js",
   output: {
-    path: buildPath,
-    filename: "bundle.js",
-    publicPath: '/assets/'
+    filename: "public/bundle.js"
   },
   devServer: {
     inline: true,
@@ -22,10 +19,10 @@ module.exports = {
         exclude: /(node_modules|bower_components)/,
         loader: 'babel',
         query: {
-                // https://github.com/babel/babel-loader#options
-                cacheDirectory: true,
-                presets: ['es2015', 'react']
-            }
+          // https://github.com/babel/babel-loader#options
+          cacheDirectory: true,
+          presets: ['react']
+        }
       }
     ]
   }
